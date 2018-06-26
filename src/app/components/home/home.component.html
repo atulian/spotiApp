@@ -1,15 +1,1 @@
-<div class="card-columns">
-    <div class="card" *ngFor="let cancion of nuevasCanciones" ng-href="">
-        <img class="card-img-top" [src]="cancion.images[0].url"  alt="Card image cap">
-        <div class="card-body text-black">
-            <h5 class="card-title">
-                {{cancion.name}}
-            </h5>
-            <p class="card-text"> 
-                <span *ngFor="let artista of cancion.artists"  class="badge badge-pill badge-dark">
-                    {{artista.name}}
-                </span>
-            </p>
-        </div>
-    </div>
-</div>
+<app-tarjetas [items]="nuevasCanciones"></app-tarjetas>
