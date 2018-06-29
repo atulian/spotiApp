@@ -38,3 +38,7 @@ hr {
         opacity: 1;
     }
 }
+.fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+  }

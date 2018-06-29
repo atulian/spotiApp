@@ -7,14 +7,13 @@ import { map, retry } from 'rxjs/operators';
 export class SpotifyService {
 
   constructor( private http: HttpClient ) {
-      console.log('Spotify services listo !');
    }
 
   getQuery( query: string ) {
 
     const url = `https://api.spotify.com/v1/${ query }`;
     const headers = new HttpHeaders({
-        'Authorization' : 'Bearer BQCw_nXdzA4iwIBdsRngamcFxdBCPrP0_pKnmdx3ct-IsmYUWt2PQKPHSXBIqysaVHCjXYyMGTMemqBC2Es'
+        'Authorization' : 'Bearer BQBeQHA2SU9c131c4tULTNZH0oGoSzpi9jkJwr1UpLcu-429GGyRdbAudtjx4JNiZSxpBmbVUz2NtAzjOAg'
     });
 
     return this.http.get(url , {headers: headers});
@@ -25,8 +24,13 @@ export class SpotifyService {
       .pipe( map( data =>  data['albums'].items ));
   }
 
-  getArtista(termino: string) {
+  getArtistas(termino: string) {
     return this.getQuery(`search?q=${termino}&type=artist&limit=15`)
       .pipe( map( data => data['artists'].items));
   }
+
+  getArtista( id: string ) {
+    return this.getQuery(`artists/${id}`);
+  }
+
 }
