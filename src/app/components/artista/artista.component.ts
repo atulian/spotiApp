@@ -29,7 +29,6 @@ export class ArtistaComponent {
         .subscribe( artista  => {
             this.artista = artista;
         });
-
   }
 
 }

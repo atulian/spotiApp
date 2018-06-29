@@ -2,7 +2,7 @@
 
 <div class="row" *ngIf="!loading">
   <div class="col-2">
-    <img [src]="artista.images | noimage" class="img-thumbnail rounded" alt="">
+    <img [src]="artista.images | noimage" class="img-thumbnail rounded-circle" alt="">
   </div>
   <div class="col">
       <h3>{{ artista.name }}</h3>
@@ -16,3 +16,5 @@
     </button>
   </div>
 </div>
+
+<app-top-tracks></app-top-tracks>
